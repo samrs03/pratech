@@ -1,0 +1,13 @@
+{
+    "port": 3010,
+    "firebaseConfig": {
+        "apiKey": "AIzaSyBqJDQJzPO_r8DBsZvSYxz1Bjmnww3YMZg",
+        "authDomain": "pratech-50619.firebaseapp.com",
+        "projectId": "pratech-50619",
+        "storageBucket": "pratech-50619.appspot.com",
+        "messagingSenderId": "387049562818",
+        "appId": "1:387049562818:web:969bec40b086ec34ba115b",
+        "measurementId": "G-6JE2YBKX1T"
+    },
+    "JWTSecret": "Sbo6rD3UezsD-vTx_bVpQ1sG3ceMItpnxeGuzQkiXGQ"
+}
