@@ -3,11 +3,11 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Listing from "./Listing";
 import Inserting from "./Inserting";
 import NotFound from "./NotFound";
-export default function Dashboard({ setAuthenticated, setToken, token }) {
+export default function Dashboard({ setToken, token }) {
   const loggingOut = (e) => {
     e.preventDefault();
-    setToken();
-    setAuthenticated(false);
+    setToken('');
+
   };
   return (
     <BrowserRouter>

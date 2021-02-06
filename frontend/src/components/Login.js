@@ -31,10 +31,14 @@ export default function Login({ setToken, setAuthenticated }) {
         admin_password: formData.Password,
       })
       .then((r) => {
-        setToken(r.data.token);
-        setAuthenticated(true);
+        // localStorage.setItem('token',JSON.stringify(r.data.token));
+        // localStorage.setItem('authenticated',JSON.stringify(true))
+        setToken(r.data)
+        // setToken(r.data.token);
+        // setAuthenticated(true);
       })
       .catch((e) => {
+        console.log(e)
         window.alert(`${e.response.data.errorMessage}`);
       });
   };
@@ -45,7 +49,7 @@ export default function Login({ setToken, setAuthenticated }) {
   if (!flag) {
     return (
       <section>
-         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <a className="navbar-brand" href="/">
             Pratech
           </a>

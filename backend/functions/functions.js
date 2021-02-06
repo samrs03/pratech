@@ -71,9 +71,7 @@ const Authorization = (req, res) => {
             return res.status(200).json({
               statusCode: 200,
               message: "Admin successfully authenticated",
-              token: JSONWEBTOKEN.sign(payload, config.JWTSecret, {
-                expiresIn: 3600,
-              }),
+              token: JSONWEBTOKEN.sign(payload, config.JWTSecret),
             });
           } else {
             return res.status(400).json({
