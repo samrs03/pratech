@@ -13,9 +13,9 @@ export default function Dashboard({ setToken, token }) {
     <BrowserRouter>
       <section>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a className="navbar-brand" href="/">
+          <button className="navbar-brand btn btn-primary" >
             Pratech
-          </a>
+          </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
@@ -53,6 +53,9 @@ export default function Dashboard({ setToken, token }) {
         </nav>
       </section>
       <Switch>
+        <Route exact path='/'>
+          <Listing token={token}/>
+        </Route>
         <Route path="/list">
           <Listing token={token} />
         </Route>
