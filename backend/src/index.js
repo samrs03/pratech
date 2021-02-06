@@ -12,7 +12,7 @@ app.post("/api/v1/pratech/admins/add", functions.PostingAdmin);
 app.post("/api/v1/pratech/login", functions.Authorization);
 app.use(functions.VerifyingAuthorization);
 app.post('/api/v1/pratech/users/add',functions.PostingUser)
-app.get("/api/v1/pratech/users/list/", functions.GettingUsers);
+app.get("/api/v1/pratech/users/list", functions.GettingUsers);
 app.delete('/api/v1/pratech/users/delete',functions.DeleteUser);
 app.put('/api/v1/pratech/users/update',functions.PuttingUser);
 

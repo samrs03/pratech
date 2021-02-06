@@ -15,7 +15,7 @@ const PostingAdmin = (req, res) => {
         .then(() => {
           return res.status(200).json({
             statusCode: 200,
-            message: "Information inserted successfully",
+            message: "New Admin registered successfully",
           });
         })
         .catch((e) => {
@@ -23,12 +23,12 @@ const PostingAdmin = (req, res) => {
             return res.status(400).json({
               errorCode: 400,
               errorMessage:
-                "The information sent is already used by other admin",
+                "The information sent is already used by other admin, try again with other info",
             });
           }
           return res.status(500).json({
             errorCode: 500,
-            errorMessage: "There was an error while inserting this to the DB",
+            errorMessage: "There was an error while inserting this to the DB, contact your admin",
           });
         });
     } else {
@@ -60,7 +60,7 @@ const Authorization = (req, res) => {
         if (result === null || result.length > 0) {
           return res.status(400).json({
             errorCode: 400,
-            errorMessage: "Either adminname or password information is wrong",
+            errorMessage: "Either adminname or password information is wrong,try again",
           });
         } else {
           if (result.admin_password === req.body.admin_password) {
