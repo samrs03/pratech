@@ -4,7 +4,7 @@ import axios from "axios";
 import Update from "./Update";
 export default function Listing({ token }) {
   const [_id, set_Id] = useState("");
-  const [idToUpdate, setIdToUpdate] = useState('');
+  const [idToUpdate, setIdToUpdate] = useState("");
   const [documents, setDocuments] = useState();
   const [myToggle, setMyToggle] = useState(false);
   const [flag, setFlag] = useState(false);
@@ -41,11 +41,25 @@ export default function Listing({ token }) {
   if (!myToggle) {
     return (
       <section>
-        <div className="d-flex justify-content-around ">
+        <div className="d-flex justify-content-around m-5">
           <form onSubmit={handlingSubmit}>
-            <input type="text" onChange={handlingChange} />
-            <input type="submit" value="search" />
+            <label className="mr-2">
+              ID to filter by:
+              <br />
+              <input type="text" onChange={handlingChange} />
+            </label>
+            <input type="submit" value="search" className="btn btn-primary" />
           </form>
+          <input
+            type="submit"
+            value="reset"
+            className="btn btn-primary text-white"
+            onClick={(e) => {
+              e.preventDefault();
+              set_Id("");
+              GettingDocuments();
+            }}
+          />
         </div>
         <ListChild
           documents={documents}
@@ -63,7 +77,7 @@ export default function Listing({ token }) {
         setMyToggle={setMyToggle}
         setFlag={setFlag}
         document={documents}
-        token ={token}
+        token={token}
       />
     );
   }
